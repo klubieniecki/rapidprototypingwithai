@@ -2,16 +2,56 @@ import type { QuoteSlide as QuoteSlideType } from "@/lib/types";
 
 export function QuoteSlide({ slide }: { slide: QuoteSlideType }) {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center px-16 text-center overflow-hidden">
+    <div className="relative flex h-full w-full flex-col items-center justify-center px-16 text-center overflow-hidden noise-overlay vignette">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 pointer-events-none gradient-mesh" />
+
+      {/* Atmospheric background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Primary radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[650px] bg-gradient-radial from-accent-green/[0.07] via-accent-green/[0.02] to-transparent blur-3xl glow-animate" />
+        {/* Secondary accent - cool tone */}
+        <div className="absolute top-[30%] left-[20%] w-[300px] h-[300px] bg-gradient-radial from-accent-blue/[0.035] to-transparent blur-3xl" />
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
+                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+      </div>
+
       {/* Decorative oversized quotation mark */}
-      <div className="absolute top-[15%] left-[8%] pointer-events-none select-none">
-        <span className="font-emphasis text-[clamp(12rem,20vw,18rem)] leading-none text-white/[0.03]">
+      <div className="absolute top-[12%] left-[6%] pointer-events-none select-none">
+        <span className="font-emphasis text-[clamp(14rem,22vw,20rem)] leading-none text-white/[0.025]">
           &ldquo;
+        </span>
+      </div>
+      {/* Closing quote mark */}
+      <div className="absolute bottom-[12%] right-[6%] pointer-events-none select-none">
+        <span className="font-emphasis text-[clamp(14rem,22vw,20rem)] leading-none text-white/[0.02]">
+          &rdquo;
         </span>
       </div>
 
       {/* Subtle vertical accent line */}
-      <div className="absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-white/[0.04] to-transparent" />
+      <div className="absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent" />
+
+      {/* Horizontal accents */}
+      <div className="absolute top-[35%] left-0 w-16 h-px bg-gradient-to-r from-transparent via-accent-green/[0.15] to-transparent" />
+      <div className="absolute bottom-[35%] right-0 w-16 h-px bg-gradient-to-l from-transparent via-accent-green/[0.15] to-transparent" />
+
+      {/* Corner accents - enhanced */}
+      <div className="absolute top-8 left-8">
+        <div className="w-20 h-20 border-l-2 border-t-2 border-white/[0.08]" />
+        <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-accent-green/20" />
+      </div>
+      <div className="absolute bottom-8 right-8">
+        <div className="w-20 h-20 border-r-2 border-b-2 border-white/[0.08]" />
+        <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-accent-green/20" />
+      </div>
 
       {/* Main quote */}
       <blockquote className="relative max-w-4xl z-10">

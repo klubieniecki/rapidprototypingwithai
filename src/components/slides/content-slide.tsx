@@ -3,13 +3,34 @@ import Image from "next/image";
 
 export function ContentSlide({ slide }: { slide: ContentSlideType }) {
   return (
-    <div className="relative flex h-full w-full px-16 py-12 overflow-hidden">
+    <div className="relative flex h-full w-full px-16 py-12 overflow-hidden noise-overlay">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 pointer-events-none gradient-mesh opacity-60" />
+
+      {/* Atmospheric background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle radial glow */}
+        <div className="absolute top-[20%] left-[10%] w-[600px] h-[400px] bg-gradient-radial from-accent-green/[0.04] via-transparent to-transparent blur-3xl" />
+        {/* Secondary accent */}
+        <div className="absolute bottom-[30%] right-[20%] w-[400px] h-[300px] bg-gradient-radial from-accent-blue/[0.025] to-transparent blur-3xl" />
+        {/* Grid pattern - very subtle */}
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
+                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+      </div>
+
       {/* Main content area */}
-      <div className={`flex flex-col justify-center ${slide.sideImage ? "flex-1" : "w-full"}`}>
+      <div className={`relative z-10 flex flex-col justify-center ${slide.sideImage ? "flex-1" : "w-full"}`}>
         {/* Subtle corner accent - only show if no side image */}
         {!slide.sideImage && (
           <div className="absolute top-0 right-0 w-48 h-48 pointer-events-none">
-            <div className="absolute top-8 right-8 w-24 h-24 border-t border-r border-white/[0.04] rounded-tr-3xl" />
+            <div className="absolute top-8 right-8 w-28 h-28 border-t border-r border-white/[0.06]" />
+            <div className="absolute top-10 right-10 w-3 h-3 border-t border-r border-accent-green/20" />
           </div>
         )}
 
@@ -127,9 +148,14 @@ export function ContentSlide({ slide }: { slide: ContentSlideType }) {
         )}
       </div>
 
+      {/* Bottom-left corner accent */}
+      {!slide.sideImage && (
+        <div className="absolute bottom-8 left-8 w-20 h-20 border-l border-b border-white/[0.05]" />
+      )}
+
       {/* Side image */}
       {slide.sideImage && (
-        <div className="flex flex-col items-center justify-center pl-8 shrink-0">
+        <div className="relative z-10 flex flex-col items-center justify-center pl-8 shrink-0">
           {slide.sideImageLogo && (
             <div className="relative w-40 h-12 mb-4">
               <Image

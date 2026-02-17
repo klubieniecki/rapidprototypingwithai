@@ -74,12 +74,29 @@ export function TwoColumnSlide({ slide }: { slide: TwoColumnSlideType }) {
   const rightAccent = slide.rightColumn.accent || "muted";
 
   return (
-    <div className="relative flex h-full w-full flex-col justify-center px-16 py-12 overflow-hidden">
-      {/* Subtle background gradient */}
+    <div className="relative flex h-full w-full flex-col justify-center px-16 py-12 overflow-hidden noise-overlay">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 pointer-events-none gradient-mesh opacity-50" />
+
+      {/* Atmospheric background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-radial from-white/[0.01] to-transparent blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-radial from-white/[0.01] to-transparent blur-3xl" />
+        {/* Accent-aware glows based on column colors */}
+        <div className="absolute top-[30%] left-[15%] w-[400px] h-[350px] bg-gradient-radial from-accent-green/[0.03] to-transparent blur-3xl" />
+        <div className="absolute bottom-[25%] right-[15%] w-[400px] h-[350px] bg-gradient-radial from-accent-blue/[0.025] to-transparent blur-3xl" />
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.018]"
+          style={{
+            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
+                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
       </div>
+
+      {/* Corner accents */}
+      <div className="absolute top-8 right-8 w-16 h-16 border-t border-r border-white/[0.05]" />
+      <div className="absolute bottom-8 left-8 w-16 h-16 border-b border-l border-white/[0.05]" />
 
       {/* Header */}
       <div className="relative z-10 mb-8">

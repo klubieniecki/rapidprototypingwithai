@@ -171,14 +171,6 @@ function SystemArchitectureDiagram() {
 }
 
 function PrototypingLoopDiagram() {
-  const steps = [
-    { num: 1, name: "Clarify", who: "Human", type: "human" as const },
-    { num: 2, name: "Constrain", who: "Human + AI", type: "both" as const },
-    { num: 3, name: "Generate", who: "AI", type: "ai" as const },
-    { num: 4, name: "Make Clickable", who: "AI + Human", type: "both" as const },
-    { num: 5, name: "Test", who: "Human", type: "human" as const },
-  ];
-
   const typeStyles = {
     human: {
       border: "border-[#7dd3fc]/50",
@@ -200,102 +192,54 @@ function PrototypingLoopDiagram() {
     },
   };
 
-  // Pentagon positions (clockwise from top)
-  const positions = [
-    { x: 50, y: 8 },    // 1: top center
-    { x: 92, y: 38 },   // 2: top right
-    { x: 76, y: 88 },   // 3: bottom right
-    { x: 24, y: 88 },   // 4: bottom left
-    { x: 8, y: 38 },    // 5: top left
-  ];
-
-  // SVG connection points (matching card positions)
-  const svgPoints = [
-    { x: 50, y: 8 },
-    { x: 92, y: 38 },
-    { x: 76, y: 88 },
-    { x: 24, y: 88 },
-    { x: 8, y: 38 },
-  ];
+  const StepCard = ({ num, name, who, type }: { num: number; name: string; who: string; type: "human" | "ai" | "both" }) => {
+    const styles = typeStyles[type];
+    return (
+      <div className={`flex flex-col items-center gap-1.5 rounded-xl border ${styles.border} ${styles.bg} ${styles.glow} px-5 py-3 min-w-[120px] backdrop-blur-sm`}>
+        <span className={`font-code text-2xl font-bold ${styles.numColor}`}>{num}</span>
+        <span className="text-sm font-semibold text-deck whitespace-nowrap">{name}</span>
+        <span className="font-code text-[0.6rem] uppercase tracking-wider text-deck/40 whitespace-nowrap">{who}</span>
+      </div>
+    );
+  };
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full max-w-4xl mx-auto">
-      {/* Circular container */}
-      <div className="relative w-full aspect-square max-w-[540px]">
-        {/* SVG for dotted line connections */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 100 100"
-          fill="none"
-        >
-          {/* Dotted lines connecting each step to the next */}
-          {svgPoints.map((point, i) => {
-            const nextPoint = svgPoints[(i + 1) % svgPoints.length];
-            return (
-              <line
-                key={i}
-                x1={point.x}
-                y1={point.y}
-                x2={nextPoint.x}
-                y2={nextPoint.y}
-                stroke="currentColor"
-                strokeWidth="0.8"
-                strokeDasharray="2 3"
-                className="text-white/20"
-              />
-            );
-          })}
-        </svg>
+    <div className="flex flex-col items-center gap-6 w-full">
+      {/* Row 1: Clarify at top */}
+      <div className="flex justify-center">
+        <StepCard num={1} name="Clarify" who="Human" type="human" />
+      </div>
 
-        {/* Step cards positioned in a circle */}
-        {steps.map((step, i) => {
-          const styles = typeStyles[step.type];
-          const pos = positions[i];
-          return (
-            <div
-              key={step.num}
-              className="absolute -translate-x-1/2 -translate-y-1/2"
-              style={{
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
-              }}
-            >
-              <div className={`flex flex-col items-center gap-1.5 rounded-xl border ${styles.border} ${styles.bg} ${styles.glow} px-5 py-3.5 min-w-[130px] backdrop-blur-sm`}>
-                <span className={`font-code text-2xl font-bold ${styles.numColor}`}>
-                  {step.num}
-                </span>
-                <span className="text-sm font-semibold text-deck whitespace-nowrap">
-                  {step.name}
-                </span>
-                <span className="font-code text-[0.6rem] uppercase tracking-wider text-deck/40 whitespace-nowrap">
-                  {step.who}
-                </span>
-              </div>
-            </div>
-          );
-        })}
-
-        {/* Center label */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-          <div className="rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2">
-            <span className="text-deck/30 font-code text-[0.7rem] uppercase tracking-[0.15em]">Iterate</span>
+      {/* Row 2: Test and Constrain on sides */}
+      <div className="flex items-center justify-center gap-32">
+        <StepCard num={5} name="Test" who="Human" type="human" />
+        <div className="flex flex-col items-center">
+          <div className="rounded-full border border-white/[0.08] bg-white/[0.02] px-5 py-2">
+            <span className="text-deck/30 font-code text-xs uppercase tracking-[0.15em]">Iterate</span>
           </div>
         </div>
+        <StepCard num={2} name="Constrain" who="Human + AI" type="both" />
+      </div>
+
+      {/* Row 3: Make Clickable and Generate at bottom */}
+      <div className="flex items-center justify-center gap-16">
+        <StepCard num={4} name="Make Clickable" who="AI + Human" type="both" />
+        <StepCard num={3} name="Generate" who="AI" type="ai" />
       </div>
 
       {/* Legend */}
-      <div className="flex items-center gap-6 mt-2">
+      <div className="flex items-center gap-8 mt-4">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-[#7dd3fc]/30 border border-[#7dd3fc]/50" />
-          <span className="font-code text-[0.7rem] text-deck/50 uppercase tracking-wider">Human</span>
+          <span className="font-code text-xs text-deck/50 uppercase tracking-wider">Human</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-accent-green/30 border border-accent-green/50" />
-          <span className="font-code text-[0.7rem] text-deck/50 uppercase tracking-wider">AI</span>
+          <span className="font-code text-xs text-deck/50 uppercase tracking-wider">AI</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-[#fcd34d]/30 border border-[#fcd34d]/50" />
-          <span className="font-code text-[0.7rem] text-deck/50 uppercase tracking-wider">Collaboration</span>
+          <span className="font-code text-xs text-deck/50 uppercase tracking-wider">Collaboration</span>
         </div>
       </div>
     </div>
@@ -493,13 +437,35 @@ function BeforeAfterPrototypeDiagram() {
 
 export function DiagramSlide({ slide }: { slide: DiagramSlideType }) {
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center px-16 py-12">
-      <h2 className="text-[clamp(2rem,3.5vw,3rem)] font-bold leading-tight tracking-tight text-deck text-center mb-2">
+    <div className="relative flex h-full w-full flex-col items-center justify-center px-16 py-12 overflow-hidden noise-overlay">
+      {/* Gradient mesh background */}
+      <div className="absolute inset-0 pointer-events-none gradient-mesh opacity-50" />
+
+      {/* Atmospheric background elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle radial glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-radial from-accent-green/[0.035] via-transparent to-transparent blur-3xl" />
+        {/* Grid pattern - very subtle */}
+        <div
+          className="absolute inset-0 opacity-[0.012]"
+          style={{
+            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
+                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+      </div>
+
+      {/* Corner accents */}
+      <div className="absolute top-8 left-8 w-16 h-16 border-l border-t border-white/[0.05]" />
+      <div className="absolute bottom-8 right-8 w-16 h-16 border-r border-b border-white/[0.05]" />
+
+      <h2 className="relative z-10 text-[clamp(2rem,3.5vw,3rem)] font-bold leading-tight tracking-tight text-deck text-center mb-2">
         {slide.title}
       </h2>
 
       {slide.subtitle && (
-        <p className="text-[clamp(1.05rem,1.4vw,1.25rem)] text-deck-muted text-center mb-8 max-w-3xl">
+        <p className="relative z-10 text-[clamp(1.05rem,1.4vw,1.25rem)] text-deck-muted text-center mb-8 max-w-3xl">
           {slide.subtitle}
         </p>
       )}
@@ -507,13 +473,15 @@ export function DiagramSlide({ slide }: { slide: DiagramSlideType }) {
       {!slide.subtitle && <div className="mb-8" />}
 
       {/* Render the correct diagram */}
-      {slide.diagramType === "system-architecture" && <SystemArchitectureDiagram />}
-      {slide.diagramType === "prototyping-loop" && <PrototypingLoopDiagram />}
-      {slide.diagramType === "six-p-framework" && <SixPFrameworkDiagram />}
-      {slide.diagramType === "before-after-prototype" && <BeforeAfterPrototypeDiagram />}
+      <div className="relative z-10">
+        {slide.diagramType === "system-architecture" && <SystemArchitectureDiagram />}
+        {slide.diagramType === "prototyping-loop" && <PrototypingLoopDiagram />}
+        {slide.diagramType === "six-p-framework" && <SixPFrameworkDiagram />}
+        {slide.diagramType === "before-after-prototype" && <BeforeAfterPrototypeDiagram />}
+      </div>
 
       {slide.callout && (
-        <p className="mt-8 text-center text-[clamp(0.9rem,1.15vw,1.05rem)] text-deck/40">
+        <p className="relative z-10 mt-8 text-center text-[clamp(0.9rem,1.15vw,1.05rem)] text-deck/40">
           {slide.callout}
         </p>
       )}
