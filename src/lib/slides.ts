@@ -44,7 +44,7 @@ export const slides: Slide[] = [
     cards: [
       {
         heading: "AI Prototyping Toolkit",
-        body: "AI-first product development framework • Ready-to-use prompt library • Value proposition testing guide",
+        body: "AI-first product development framework • Ready-to-use prompt library",
         icon: "wrench",
       },
       {
@@ -54,7 +54,7 @@ export const slides: Slide[] = [
       },
       {
         heading: "Better Operators Community",
-        body: "Free membership • Slack workspace • Ongoing resources for operators building with AI",
+        body: "Free for Founding Members • Slack workspace • Ongoing resources for operators building with AI",
         icon: "users",
       },
     ],
@@ -517,12 +517,12 @@ export const slides: Slide[] = [
     cards: [
       {
         heading: "Today's Resources",
-        body: "AI Prototyping Toolkit • Prompt library • Build brief template • Value proposition guide",
+        body: "AI Prototyping Toolkit • Prompt library • Build brief template",
         icon: "wrench",
       },
       {
         heading: "Better Operators Community",
-        body: "Free Slack workspace • Ongoing resources • Connect with other builders",
+        body: "Free for Founding Members • Slack workspace • Ongoing resources • Connect with other builders",
         icon: "users",
       },
     ],
