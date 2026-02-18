@@ -2,7 +2,7 @@ import { Slide } from "./types";
 
 export const slides: Slide[] = [
   // ─────────────────────────────────────────────
-  // SECTION 1: OPENING (Slides 1-4)
+  // SECTION 1: OPENING (Slides 1-5)
   // ─────────────────────────────────────────────
 
   {
@@ -31,6 +31,40 @@ export const slides: Slide[] = [
 
   {
     id: 3,
+    type: "split",
+    title: "Something big is happening",
+    leftPanel: {
+      quote:
+        "GPT‑5.3‑Codex is our first model that was instrumental in creating itself.",
+      attribution: "OpenAI",
+      stat: "~80%",
+      statLabel: "of OpenAI code now written by Codex",
+    },
+    rightPanel: {
+      heading: "Three shifts reshaping software",
+      numberedItems: [
+        {
+          title: "The bottleneck moved upstream",
+          description:
+            "Knowing what to build is now the constraint — not building it",
+        },
+        {
+          title: "The triad is collapsing",
+          description:
+            "One person + AI replaces the traditional PM, Design, Eng trio",
+        },
+        {
+          title: "Management layers dissolving",
+          description: "Fewer people to manage. More ICs doing more.",
+        },
+      ],
+    },
+    notes:
+      "Set the stage — software is fundamentally changing who builds and how.",
+  },
+
+  {
+    id: 4,
     type: "quote",
     quote: "If you can describe it, you can build it.",
     subtext: "Today. Without writing code. Without hiring anyone.",
@@ -38,7 +72,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     type: "content",
     title: "What you're getting today",
     cards: [
@@ -65,11 +99,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 2: FOUNDATIONS (Slides 5-8)
+  // SECTION 2: FOUNDATIONS (Slides 6-9)
   // ─────────────────────────────────────────────
 
   {
-    id: 5,
+    id: 6,
     type: "diagram",
     title: "Anatomy of a software product",
     diagramType: "system-architecture",
@@ -79,7 +113,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 6,
+    id: 7,
     type: "diagram",
     title: "What is a prototype?",
     subtitle:
@@ -92,7 +126,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 7,
+    id: 8,
     type: "two-column",
     title: "What a prototype is NOT",
     leftColumn: {
@@ -120,7 +154,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 8,
+    id: 9,
     type: "content",
     title: "Why prototyping matters",
     bullets: [
@@ -133,11 +167,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 3: GETTING READY (Slides 9-13)
+  // SECTION 3: GETTING READY (Slides 10-14)
   // ─────────────────────────────────────────────
 
   {
-    id: 9,
+    id: 10,
     type: "quote",
     quote:
       "Give me six hours to chop down a tree, and I will spend the first four sharpening the axe.",
@@ -148,7 +182,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 10,
+    id: 11,
     type: "two-column",
     title: "The modern AI prototyping stack",
     leftColumn: {
@@ -176,7 +210,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 11,
+    id: 12,
     type: "content",
     title: "Getting set up",
     cards: [
@@ -203,7 +237,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 12,
+    id: 13,
     type: "content",
     title: "Design resources",
     cards: [
@@ -229,7 +263,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 13,
+    id: 14,
     type: "two-column",
     title: "Text is king",
     subtitle: "The most powerful communication technology ever invented — for 5,000 years.",
@@ -257,11 +291,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 4: LET'S PROTOTYPE (Slides 14-19)
+  // SECTION 4: LET'S PROTOTYPE (Slides 15-20)
   // ─────────────────────────────────────────────
 
   {
-    id: 14,
+    id: 15,
     type: "section-divider",
     title: "Let's prototype",
     subtitle: "From fuzzy idea to clickable demo",
@@ -270,7 +304,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 15,
+    id: 16,
     type: "diagram",
     title: "The AI-first prototyping loop",
     diagramType: "prototyping-loop",
@@ -281,7 +315,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 16,
+    id: 17,
     type: "diagram",
     title: "The 6P framework for product-market fit",
     diagramType: "six-p-framework",
@@ -293,7 +327,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 17,
+    id: 18,
     type: "content",
     title: "Creating a build brief",
     subtitle:
@@ -320,7 +354,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 18,
+    id: 19,
     type: "two-column",
     title: "The more specific your input, the more useful your output.",
     loopStage: "constrain",
@@ -341,7 +375,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 19,
+    id: 20,
     type: "two-column",
     title: "Real vs. mocked",
     loopStage: "clickable",
@@ -371,11 +405,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 5: TESTING FOR SIGNAL (Slides 20-22)
+  // SECTION 5: TESTING FOR SIGNAL (Slides 21-23)
   // ─────────────────────────────────────────────
 
   {
-    id: 20,
+    id: 21,
     type: "quote",
     quote:
       "Don't fall in love with the prototype — fall in love with learning.",
@@ -403,7 +437,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 21,
+    id: 22,
     type: "content",
     title: "Five testing tactics",
     loopStage: "test",
@@ -434,7 +468,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 22,
+    id: 23,
     type: "content",
     title: "What feedback matters",
     loopStage: "test",
@@ -451,11 +485,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 6: CLOSING (Slides 23-26)
+  // SECTION 6: CLOSING (Slides 24-27)
   // ─────────────────────────────────────────────
 
   {
-    id: 23,
+    id: 24,
     type: "quote",
     quote: "Specificity gets results. Vagueness gets noise.",
     sections: [
@@ -472,7 +506,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 24,
+    id: 25,
     type: "content",
     title: "Your next 24 hours",
     numberedSteps: [
@@ -500,7 +534,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 25,
+    id: 26,
     type: "title",
     title: "Go build something.",
     subtitle:
@@ -511,7 +545,7 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 26,
+    id: 27,
     type: "content",
     title: "Join the community",
     cards: [

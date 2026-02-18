@@ -7,13 +7,23 @@ export type SlideType =
   | "two-column"
   | "section-divider"
   | "diagram"
-  | "resource";
+  | "resource"
+  | "split";
+
+// Prototyping loop stages (from slide 13)
+export type LoopStage =
+  | "clarify"      // Human (blue)
+  | "constrain"    // Human + AI (amber)
+  | "generate"     // AI (green)
+  | "clickable"    // AI + Human (amber)
+  | "test";        // Human (blue)
 
 // Base fields shared by all slides
 interface BaseSlide {
   id: number;
   type: SlideType;
   notes?: string; // speaker notes — not rendered on screen
+  loopStage?: LoopStage; // optional badge showing position in prototyping loop
 }
 
 // Slide 1 (title), Slide 30 (closing)
@@ -92,6 +102,22 @@ export interface ResourceSlide extends BaseSlide {
   callout?: string;
 }
 
+// Split-screen slide with quote on left, numbered points on right
+export interface SplitSlide extends BaseSlide {
+  type: "split";
+  title: string;
+  leftPanel: {
+    quote: string;
+    attribution?: string;
+    stat?: string;
+    statLabel?: string;
+  };
+  rightPanel: {
+    heading?: string;
+    numberedItems: { title: string; description: string }[];
+  };
+}
+
 // Union type for all slides
 export type Slide =
   | TitleSlide
@@ -100,6 +126,7 @@ export type Slide =
   | TwoColumnSlide
   | SectionDividerSlide
   | DiagramSlide
-  | ResourceSlide;
+  | ResourceSlide
+  | SplitSlide;
 
-export const TOTAL_SLIDES = 30;
+export const TOTAL_SLIDES = 27;

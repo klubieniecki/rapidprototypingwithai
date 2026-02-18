@@ -7,6 +7,7 @@ import { QuoteSlide } from "./slides/quote-slide";
 import { TwoColumnSlide } from "./slides/two-column-slide";
 import { SectionDivider } from "./slides/section-divider";
 import { DiagramSlide } from "./slides/diagram-slide";
+import { SplitSlide } from "./slides/split-slide";
 
 const loopStageConfig: Record<LoopStage, { label: string; num: number; color: string; bg: string; border: string }> = {
   clarify: {
@@ -71,6 +72,8 @@ export function SlideRenderer({ slide }: { slide: Slide }) {
         return <SectionDivider slide={slide} />;
       case "diagram":
         return <DiagramSlide slide={slide} />;
+      case "split":
+        return <SplitSlide slide={slide} />;
       default:
         return (
           <div className="flex h-full w-full items-center justify-center text-deck-muted">
