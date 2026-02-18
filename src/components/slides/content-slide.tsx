@@ -166,12 +166,13 @@ export function ContentSlide({ slide }: { slide: ContentSlideType }) {
               />
             </div>
           )}
-          <div className="relative w-48 h-48 rounded-xl overflow-hidden bg-white p-2">
+          <div className="relative w-72 h-auto rounded-xl overflow-hidden shadow-2xl shadow-black/20 border border-white/10">
             <Image
               src={slide.sideImage}
               alt=""
-              fill
-              className="object-contain"
+              width={288}
+              height={400}
+              className="object-cover w-full h-auto"
             />
           </div>
           {slide.sideImageCaption && (

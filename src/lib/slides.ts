@@ -19,7 +19,7 @@ export const slides: Slide[] = [
     id: 2,
     type: "content",
     title: "About me",
-    subtitle: "Kyle — AI Product Leader & Founder, Fractions",
+    subtitle: "Kyle — AI Product Leader",
     bullets: [
       "10+ years in B2B SaaS product leadership",
       "$150M+ ARR shipped across fintech, edtech, platforms",
@@ -133,7 +133,7 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 3: AI-FIRST MODEL (Slides 9-14)
+  // SECTION 3: GETTING READY (Slides 9-13)
   // ─────────────────────────────────────────────
 
   {
@@ -190,9 +190,16 @@ export const slides: Slide[] = [
         body: "Cursor offers a free trial with Claude built in. Download at cursor.com.",
         icon: "download",
       },
+      {
+        heading: "Need a guided walkthrough?",
+        body: "Free 90-minute course: 'Set Up Your Agentic IDE' on Better Operators. Zero to working web app.",
+        icon: "graduation",
+      },
     ],
+    sideImage: "/agenticide1.png",
+    sideImageCaption: "betteroperators.com",
     callout: "Text is king. The terminal was scary — but it's where the real unlock happens.",
-    notes: "Two-path fork. Star on Option B (coding agents).",
+    notes: "Three-path fork with Better Operators course reference for hands-on setup guidance.",
   },
 
   {
@@ -223,77 +230,6 @@ export const slides: Slide[] = [
 
   {
     id: 13,
-    type: "content",
-    title: "Modes: How to talk to your AI",
-    cards: [
-      {
-        heading: "🗺️ Plan Mode",
-        body: "\"Don't write code yet. Plan the approach.\" Prevents the AI from sprinting in the wrong direction.",
-        icon: "map",
-      },
-      {
-        heading: "📖 Explanatory Output",
-        body: "\"Explain what you're doing and why.\" Builds your mental models faster. Switch to concise once comfortable.",
-        icon: "book",
-      },
-    ],
-    notes: "Two simple cards. Clean and instructional.",
-  },
-
-  {
-    id: 14,
-    type: "diagram",
-    title: "The AI-first prototyping loop",
-    diagramType: "prototyping-loop",
-    callout:
-      "After testing, loop back — refine your understanding, regenerate, and test again.",
-    notes:
-      "Core mental model slide. Circular loop layout. Blue = Human, Green = AI, Amber = Collaboration.",
-  },
-
-  // ─────────────────────────────────────────────
-  // SECTION 4: BEFORE YOU PROMPT (Slides 15-18)
-  // ─────────────────────────────────────────────
-
-  {
-    id: 15,
-    type: "diagram",
-    title: "The 6P framework for product-market fit",
-    diagramType: "six-p-framework",
-    subtitle:
-      "Focus on the 4 that matter for prototyping. Pricing & Positioning come later.",
-    notes:
-      "6 segments: Persona, Problem, Product, Proposition (active), Pricing, Positioning (dimmed). 4P table below.",
-  },
-
-  {
-    id: 16,
-    type: "content",
-    title: "Creating a build brief",
-    subtitle:
-      "A 2–5 page requirements doc designed for AI coding agents.",
-    numberedSteps: [
-      { step: "Persona", detail: "Operator profile, not marketing avatar" },
-      {
-        step: "Problem",
-        detail: "Quantified pain, trigger moments, workarounds",
-      },
-      {
-        step: "Product",
-        detail: "3–5 P0 features with user stories & acceptance criteria",
-      },
-      {
-        step: "Proposition",
-        detail: "Headline, subheadline, 3 benefits",
-      },
-    ],
-    callout: "Not a PRD. Not 50 pages. Just enough context for AI to build something real.",
-    notes:
-      "Styled mockup of a markdown document with these four sections visible.",
-  },
-
-  {
-    id: 17,
     type: "two-column",
     title: "Text is king",
     subtitle: "The most powerful communication technology ever invented — for 5,000 years.",
@@ -321,22 +257,73 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 5: LIVE BUILD (Slides 18-20)
+  // SECTION 4: LET'S PROTOTYPE (Slides 14-19)
   // ─────────────────────────────────────────────
 
   {
-    id: 18,
+    id: 14,
     type: "section-divider",
-    title: "Live build",
+    title: "Let's prototype",
     subtitle: "From fuzzy idea to clickable demo",
     notes:
       "Transition slide before screen share begins. Last full slide before demo.",
   },
 
   {
-    id: 19,
+    id: 15,
+    type: "diagram",
+    title: "The AI-first prototyping loop",
+    diagramType: "prototyping-loop",
+    callout:
+      "After testing, loop back — refine your understanding, regenerate, and test again.",
+    notes:
+      "Core mental model slide. Circular loop layout. Blue = Human, Green = AI, Amber = Collaboration.",
+  },
+
+  {
+    id: 16,
+    type: "diagram",
+    title: "The 6P framework for product-market fit",
+    diagramType: "six-p-framework",
+    loopStage: "clarify",
+    subtitle:
+      "Focus on the 4 that matter for prototyping. Pricing & Positioning come later.",
+    notes:
+      "6 segments: Persona, Problem, Product, Proposition (active), Pricing, Positioning (dimmed). 4P table below.",
+  },
+
+  {
+    id: 17,
+    type: "content",
+    title: "Creating a build brief",
+    subtitle:
+      "A 2–5 page requirements doc designed for AI coding agents.",
+    loopStage: "clarify",
+    numberedSteps: [
+      { step: "Persona", detail: "Operator profile, not marketing avatar" },
+      {
+        step: "Problem",
+        detail: "Quantified pain, trigger moments, workarounds",
+      },
+      {
+        step: "Product",
+        detail: "3–5 P0 features with user stories & acceptance criteria",
+      },
+      {
+        step: "Proposition",
+        detail: "Headline, subheadline, 3 benefits",
+      },
+    ],
+    callout: "Not a PRD. Not 50 pages. Just enough context for AI to build something real.",
+    notes:
+      "Styled mockup of a markdown document with these four sections visible.",
+  },
+
+  {
+    id: 18,
     type: "two-column",
     title: "The more specific your input, the more useful your output.",
+    loopStage: "constrain",
     leftColumn: {
       heading: "Vague",
       items: ["\"Design me an app\""],
@@ -354,9 +341,10 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 20,
+    id: 19,
     type: "two-column",
     title: "Real vs. mocked",
+    loopStage: "clickable",
     leftColumn: {
       heading: "What's Real ✅",
       items: [
@@ -383,14 +371,15 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 6: TESTING FOR SIGNAL (Slides 21-23)
+  // SECTION 5: TESTING FOR SIGNAL (Slides 20-22)
   // ─────────────────────────────────────────────
 
   {
-    id: 21,
+    id: 20,
     type: "quote",
     quote:
       "Don't fall in love with the prototype — fall in love with learning.",
+    loopStage: "test",
     sections: [
       {
         heading: "Good for",
@@ -414,9 +403,10 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 22,
+    id: 21,
     type: "content",
     title: "Five testing tactics",
+    loopStage: "test",
     numberedSteps: [
       {
         step: "Fake Door Tests",
@@ -444,9 +434,10 @@ export const slides: Slide[] = [
   },
 
   {
-    id: 23,
+    id: 22,
     type: "content",
     title: "What feedback matters",
+    loopStage: "test",
     bullets: [
       "✅ Behavior: \"I would check this every Monday morning.\"",
       "✅ Emotions: \"Seeing that number would stress me out.\"",
@@ -460,28 +451,11 @@ export const slides: Slide[] = [
   },
 
   // ─────────────────────────────────────────────
-  // SECTION 7: PROMPT LIBRARY (Slides 24-25)
+  // SECTION 6: CLOSING (Slides 23-26)
   // ─────────────────────────────────────────────
 
   {
-    id: 24,
-    type: "content",
-    title: "The prompt library",
-    numberedSteps: [
-      { step: "Fuzzy Idea → 4Ps", detail: "Force clarity with structured questions" },
-      { step: "4Ps → Build Brief", detail: "Structure your context for AI" },
-      { step: "Build Brief → Screens", detail: "Define the minimum user flow" },
-      { step: "Screens → Code", detail: "Generate the actual interface" },
-      { step: "Static → Interactive", detail: "Add JavaScript state and interactions" },
-      { step: "Iterate", detail: "Specific changes, keep everything else" },
-    ],
-    callout: "Available in the Better Operators community materials.",
-    notes:
-      "Horizontal flow/pipeline graphic. Each stage is a node. Color-coded to match the loop.",
-  },
-
-  {
-    id: 25,
+    id: 23,
     type: "quote",
     quote: "Specificity gets results. Vagueness gets noise.",
     sections: [
@@ -497,12 +471,8 @@ export const slides: Slide[] = [
       "Poster-style. Pairs with slide 9 (Lincoln quote) as a second memorable anchor.",
   },
 
-  // ─────────────────────────────────────────────
-  // SECTION 8: CLOSING (Slides 26-29)
-  // ─────────────────────────────────────────────
-
   {
-    id: 26,
+    id: 24,
     type: "content",
     title: "Your next 24 hours",
     numberedSteps: [
@@ -519,62 +489,47 @@ export const slides: Slide[] = [
         detail: "Open Claude or Cursor. Just one screen. See what comes out.",
       },
     ],
-    callout:
-      "The goal isn't a finished prototype. It's proving to yourself that you can do this.",
-    notes: "Checklist format. Clean, actionable.",
-  },
-
-  {
-    id: 27,
-    type: "content",
-    title: "What NOT to do",
     bullets: [
       "❌ Don't spend a week perfecting your first prototype",
       "❌ Don't show it to friends and count that as validation",
       "❌ Don't start thinking about scale before you have signal",
-      "❌ Don't fall in love with the prototype — fall in love with learning",
     ],
-    notes: "Red markers, clean list. Firm but friendly guardrails slide.",
-  },
-
-  {
-    id: 28,
-    type: "two-column",
-    title: "When this breaks down",
-    leftColumn: {
-      heading: "Works for",
-      items: [
-        "Testing product concepts",
-        "Early-stage exploration",
-        "Getting something in front of users fast",
-        "Proving you can execute",
-      ],
-      accent: "green",
-    },
-    rightColumn: {
-      heading: "Breaks down for",
-      items: [
-        "Deep backend logic",
-        "Real-time collaboration",
-        "Complex integrations",
-        "Production-ready builds",
-      ],
-      accent: "red",
-    },
     callout:
-      "Most ideas die because founders can't get something in front of users fast enough. This solves that.",
-    notes:
-      "Honest, balanced. Not defensive — just clear about scope.",
+      "The goal isn't a finished prototype. It's proving to yourself that you can do this.",
+    notes: "Merged action steps with guardrails. Clean, actionable.",
   },
 
   {
-    id: 29,
+    id: 25,
     type: "title",
     title: "Go build something.",
     subtitle:
       "The future belongs to builders who can turn ambiguity into artifacts.",
     meta: "Kyle Lubieniecki · Fractions · Better Operators Community",
     notes:
-      "Final slide — stays up during Q&A. QR code should be large and scannable.",
+      "Final slide — stays up during Q&A.",
+  },
+
+  {
+    id: 26,
+    type: "content",
+    title: "Join the community",
+    cards: [
+      {
+        heading: "Today's Resources",
+        body: "AI Prototyping Toolkit • Prompt library • Build brief template • Value proposition guide",
+        icon: "wrench",
+      },
+      {
+        heading: "Better Operators Community",
+        body: "Free Slack workspace • Ongoing resources • Connect with other builders",
+        icon: "users",
+      },
+    ],
+    sideImage: "/QRCODE.png",
+    sideImageLogo: "/better-light.png",
+    sideImageCaption: "Scan to join",
+    callout: "Questions? Connect with me on LinkedIn or in the Slack.",
+    notes: "Closing slide with QR code. Stays up during Q&A for scanning.",
   },
 ];
