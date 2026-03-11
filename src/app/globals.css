@@ -5,13 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Deck-specific colors */
-  --color-deck: #fffef0;
-  --color-deck-muted: #fffef0cc;
-  --color-bg-deck: #171717;
-  --color-bg-deck-lighter: #222222;
-  --color-accent-blue: #1612d3;
-  --color-accent-green: #c1ff72;
+  /* Deck-specific colors — Better Operators brand */
+  --color-deck: #F1EFE7;
+  --color-deck-muted: #F1EFE7cc;
+  --color-bg-deck: #1a1a1a;
+  --color-bg-deck-lighter: #242424;
+  --color-accent-blue: #1612D3;
+  --color-accent-blue-light: #7b74e4;
   --color-accent-red: #ff6b6b;
   --color-accent-amber: #ffb347;
 
@@ -49,24 +49,24 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #171717;
-  --foreground: #fffef0;
-  --card: #222222;
-  --card-foreground: #fffef0;
-  --popover: #222222;
-  --popover-foreground: #fffef0;
-  --primary: #fffef0;
-  --primary-foreground: #171717;
-  --secondary: #2a2a2a;
-  --secondary-foreground: #fffef0;
-  --muted: #2a2a2a;
-  --muted-foreground: #fffef0cc;
-  --accent: #2a2a2a;
-  --accent-foreground: #fffef0;
+  --background: #1a1a1a;
+  --foreground: #F1EFE7;
+  --card: #242424;
+  --card-foreground: #F1EFE7;
+  --popover: #242424;
+  --popover-foreground: #F1EFE7;
+  --primary: #F1EFE7;
+  --primary-foreground: #1a1a1a;
+  --secondary: #2c2c2c;
+  --secondary-foreground: #F1EFE7;
+  --muted: #2c2c2c;
+  --muted-foreground: #F1EFE7cc;
+  --accent: #2c2c2c;
+  --accent-foreground: #F1EFE7;
   --destructive: #ff6b6b;
-  --border: #fffef01a;
-  --input: #fffef026;
-  --ring: #fffef033;
+  --border: #F1EFE71a;
+  --input: #F1EFE726;
+  --ring: #F1EFE733;
 }
 
 @layer base {
@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #171717;
+  background: #1a1a1a;
 }
 
 .slide-frame {
@@ -133,9 +133,9 @@
 /* Gradient mesh background */
 .gradient-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(193, 255, 114, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(22, 18, 211, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse 70% 60% at 70% 80%, rgba(255, 179, 71, 0.025) 0%, transparent 50%);
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(22, 18, 211, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(123, 116, 228, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 70% 80%, rgba(255, 179, 71, 0.015) 0%, transparent 50%);
 }
 
 /* Vignette effect for dramatic slides */

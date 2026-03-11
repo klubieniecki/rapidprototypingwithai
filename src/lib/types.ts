@@ -67,12 +67,12 @@ export interface TwoColumnSlide extends BaseSlide {
   leftColumn: {
     heading: string;
     items: string[];
-    accent?: "red" | "muted" | "blue" | "green";
+    accent?: "red" | "muted" | "blue" | "primary";
   };
   rightColumn: {
     heading: string;
     items: string[];
-    accent?: "red" | "muted" | "blue" | "green";
+    accent?: "red" | "muted" | "blue" | "primary";
   };
   callout?: string;
 }

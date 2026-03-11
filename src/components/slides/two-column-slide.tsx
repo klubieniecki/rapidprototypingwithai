@@ -8,12 +8,12 @@ const accentStyles = {
     bullet: "bg-accent-red/50 ring-accent-red/15",
     glow: "shadow-[0_0_30px_rgba(255,107,107,0.05)]",
   },
-  green: {
-    border: "border-accent-green/30",
-    headerBg: "bg-accent-green/10",
-    headerText: "text-accent-green",
-    bullet: "bg-accent-green/50 ring-accent-green/15",
-    glow: "shadow-[0_0_30px_rgba(193,255,114,0.05)]",
+  primary: {
+    border: "border-accent-blue-light/30",
+    headerBg: "bg-accent-blue-light/10",
+    headerText: "text-accent-blue-light",
+    bullet: "bg-accent-blue-light/50 ring-accent-blue-light/15",
+    glow: "shadow-[0_0_30px_rgba(123,116,228,0.05)]",
   },
   blue: {
     border: "border-[#7dd3fc]/30",
@@ -38,7 +38,7 @@ function Column({
 }: {
   heading: string;
   items: string[];
-  accent?: "red" | "green" | "blue" | "muted";
+  accent?: "red" | "primary" | "blue" | "muted";
 }) {
   const styles = accentStyles[accent];
 
@@ -81,14 +81,14 @@ export function TwoColumnSlide({ slide }: { slide: TwoColumnSlideType }) {
       {/* Atmospheric background elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Accent-aware glows based on column colors */}
-        <div className="absolute top-[30%] left-[15%] w-[400px] h-[350px] bg-gradient-radial from-accent-green/[0.03] to-transparent blur-3xl" />
+        <div className="absolute top-[30%] left-[15%] w-[400px] h-[350px] bg-gradient-radial from-accent-blue/[0.03] to-transparent blur-3xl" />
         <div className="absolute bottom-[25%] right-[15%] w-[400px] h-[350px] bg-gradient-radial from-accent-blue/[0.025] to-transparent blur-3xl" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.018]"
           style={{
-            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(to right, rgba(22, 18, 211, 0.6) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(22, 18, 211, 0.6) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />

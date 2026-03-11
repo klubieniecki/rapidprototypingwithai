@@ -27,15 +27,15 @@ const loopStageConfig: Record<LoopStage, { label: string; num: number; color: st
   generate: {
     label: "Generate",
     num: 3,
-    color: "text-accent-green",
-    bg: "bg-accent-green/10",
-    border: "border-accent-green/40",
+    color: "text-accent-blue-light",
+    bg: "bg-accent-blue-light/10",
+    border: "border-accent-blue-light/40",
   },
   clickable: {
     label: "Make Clickable",
     num: 4,
     color: "text-[#fcd34d]",
-    bg: "text-[#fcd34d]",
+    bg: "bg-[#fcd34d]/10",
     border: "border-[#fcd34d]/40",
   },
   test: {

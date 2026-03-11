@@ -10,8 +10,7 @@ export const slides: Slide[] = [
     type: "title",
     title: "Rapid prototyping with AI",
     subtitle: "From Idea to Demo in Hours",
-    meta: "Kyle Lubieniecki · Fractions",
-    backgroundImage: "/Maven.png",
+    meta: "Kyle Lubieniecki · Better Operators",
     notes: "On screen as people join. Match workshop SVG style.",
   },
 
@@ -148,7 +147,7 @@ export const slides: Slide[] = [
         "A signal detector",
         "Disposable by design",
       ],
-      accent: "green",
+      accent: "primary",
     },
     notes: "Stark contrast between the two columns is the point.",
   },
@@ -201,7 +200,7 @@ export const slides: Slide[] = [
         "Steeper start, but you learn the mental models",
         "More control, real files",
       ],
-      accent: "green",
+      accent: "primary",
     },
     subtitle: "The Modern AI Development Stack",
     callout: "★ What we're using today",
@@ -284,7 +283,7 @@ export const slides: Slide[] = [
         "CLAUDE.md — project rules & preferences",
         "SKILLS.md — reusable instruction sets",
       ],
-      accent: "green",
+      accent: "primary",
     },
     callout: "Structured .md files > chat conversations. Every time.",
     notes: "Inspired by Graydon Hoare's 'Always Bet on Text' essay. Text has outlasted every other medium because of precision, efficiency, and composability.",
@@ -368,7 +367,7 @@ export const slides: Slide[] = [
       items: [
         "\"Generate the HTML/CSS for a dashboard showing 30-day runway as a large number, green/amber/red health indicator, and 3 outstanding invoices. Calm, professional tone. Realistic sample data.\"",
       ],
-      accent: "green",
+      accent: "primary",
     },
     notes:
       "Key principle of the entire build. Shown mid-build, Part 2.",
@@ -387,7 +386,7 @@ export const slides: Slide[] = [
         "The calculations (JS recalculates)",
         "The user flow",
       ],
-      accent: "green",
+      accent: "primary",
     },
     rightColumn: {
       heading: "What's Fake 🎭 (On Purpose)",
@@ -539,7 +538,7 @@ export const slides: Slide[] = [
     title: "Go build something.",
     subtitle:
       "The future belongs to builders who can turn ambiguity into artifacts.",
-    meta: "Kyle Lubieniecki · Fractions · Better Operators Community",
+    meta: "Kyle Lubieniecki · Better Operators",
     notes:
       "Final slide — stays up during Q&A.",
   },

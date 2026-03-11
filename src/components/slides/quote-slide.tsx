@@ -9,15 +9,15 @@ export function QuoteSlide({ slide }: { slide: QuoteSlideType }) {
       {/* Atmospheric background elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Primary radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[650px] bg-gradient-radial from-accent-green/[0.07] via-accent-green/[0.02] to-transparent blur-3xl glow-animate" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[650px] bg-gradient-radial from-accent-blue/[0.07] via-accent-blue/[0.02] to-transparent blur-3xl glow-animate" />
         {/* Secondary accent - cool tone */}
         <div className="absolute top-[30%] left-[20%] w-[300px] h-[300px] bg-gradient-radial from-accent-blue/[0.035] to-transparent blur-3xl" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
-            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(to right, rgba(22, 18, 211, 0.6) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(22, 18, 211, 0.6) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />
@@ -40,17 +40,17 @@ export function QuoteSlide({ slide }: { slide: QuoteSlideType }) {
       <div className="absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-white/[0.08] to-transparent" />
 
       {/* Horizontal accents */}
-      <div className="absolute top-[35%] left-0 w-16 h-px bg-gradient-to-r from-transparent via-accent-green/[0.15] to-transparent" />
-      <div className="absolute bottom-[35%] right-0 w-16 h-px bg-gradient-to-l from-transparent via-accent-green/[0.15] to-transparent" />
+      <div className="absolute top-[35%] left-0 w-16 h-px bg-gradient-to-r from-transparent via-accent-blue-light/[0.15] to-transparent" />
+      <div className="absolute bottom-[35%] right-0 w-16 h-px bg-gradient-to-l from-transparent via-accent-blue-light/[0.15] to-transparent" />
 
       {/* Corner accents - enhanced */}
       <div className="absolute top-8 left-8">
         <div className="w-20 h-20 border-l-2 border-t-2 border-white/[0.08]" />
-        <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-accent-green/20" />
+        <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-accent-blue-light/20" />
       </div>
       <div className="absolute bottom-8 right-8">
         <div className="w-20 h-20 border-r-2 border-b-2 border-white/[0.08]" />
-        <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-accent-green/20" />
+        <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-accent-blue-light/20" />
       </div>
 
       {/* Main quote */}

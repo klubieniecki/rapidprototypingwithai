@@ -93,12 +93,12 @@ export function Navigation({ currentSlide }: NavigationProps) {
       <div className="relative h-[3px] w-full bg-white/[0.04]">
         {/* Progress fill with glow */}
         <div
-          className="h-full bg-gradient-to-r from-accent-green/60 to-accent-green/40 transition-all duration-500 ease-out"
+          className="h-full bg-gradient-to-r from-accent-blue-light/60 to-accent-blue-light/40 transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
         />
         {/* Leading edge glow */}
         <div
-          className="absolute top-0 h-full w-8 bg-gradient-to-r from-transparent to-accent-green/30 blur-sm transition-all duration-500 ease-out"
+          className="absolute top-0 h-full w-8 bg-gradient-to-r from-transparent to-accent-blue-light/30 blur-sm transition-all duration-500 ease-out"
           style={{ left: `calc(${progress}% - 2rem)` }}
         />
       </div>

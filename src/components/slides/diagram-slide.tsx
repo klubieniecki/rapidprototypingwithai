@@ -10,14 +10,14 @@ function ArchBox({
 }: {
   label: string;
   desc?: string;
-  color: "green" | "amber" | "neutral" | "muted";
+  color: "primary" | "amber" | "neutral" | "muted";
   highlight?: boolean;
 }) {
   const s = {
-    green: {
-      box: "border-accent-green/50 bg-accent-green/10",
-      label: "text-accent-green",
-      desc: "text-accent-green/40",
+    primary: {
+      box: "border-accent-blue-light/50 bg-accent-blue/10",
+      label: "text-accent-blue-light",
+      desc: "text-accent-blue-light/40",
     },
     amber: {
       box: "border-accent-amber/25 bg-accent-amber/5",
@@ -40,7 +40,7 @@ function ArchBox({
     <div
       className={`rounded-lg px-5 py-2.5 text-center ${
         highlight
-          ? "border-2 shadow-[0_0_24px_rgba(193,255,114,0.1)]"
+          ? "border-2 shadow-[0_0_24px_rgba(123,116,228,0.1)]"
           : "border"
       } ${s.box}`}
     >
@@ -112,10 +112,10 @@ function SystemArchitectureDiagram() {
         <ArchBox
           label="Frontend (UI)"
           desc="What users see & interact with"
-          color="green"
+          color="primary"
           highlight
         />
-        <span className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-accent-green/20 border border-accent-green/25 px-3 py-0.5 font-code text-[clamp(0.65rem,0.85vw,0.75rem)] text-accent-green whitespace-nowrap">
+        <span className="absolute right-0 top-1/2 -translate-y-1/2 rounded-full bg-accent-blue/20 border border-accent-blue-light/25 px-3 py-0.5 font-code text-[clamp(0.65rem,0.85vw,0.75rem)] text-accent-blue-light whitespace-nowrap">
           ← TODAY
         </span>
       </div>
@@ -179,10 +179,10 @@ function PrototypingLoopDiagram() {
       glow: "shadow-[0_0_20px_rgba(125,211,252,0.15)]",
     },
     ai: {
-      border: "border-accent-green/50",
-      bg: "bg-accent-green/8",
-      numColor: "text-accent-green",
-      glow: "shadow-[0_0_20px_rgba(193,255,114,0.15)]",
+      border: "border-accent-blue-light/50",
+      bg: "bg-accent-blue-light/8",
+      numColor: "text-accent-blue-light",
+      glow: "shadow-[0_0_20px_rgba(123,116,228,0.15)]",
     },
     both: {
       border: "border-[#fcd34d]/50",
@@ -234,7 +234,7 @@ function PrototypingLoopDiagram() {
           <span className="font-code text-xs text-deck/50 uppercase tracking-wider">Human</span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-accent-green/30 border border-accent-green/50" />
+          <div className="w-3 h-3 rounded-full bg-accent-blue-light/30 border border-accent-blue-light/50" />
           <span className="font-code text-xs text-deck/50 uppercase tracking-wider">AI</span>
         </div>
         <div className="flex items-center gap-2">
@@ -263,7 +263,7 @@ function SixPFrameworkDiagram() {
           key={i}
           className={`rounded-lg border p-4 text-center transition-all ${
             p.active
-              ? "border-accent-green/30 bg-accent-green/5"
+              ? "border-accent-blue-light/30 bg-accent-blue/5"
               : "border-white/[0.04] bg-white/[0.01] opacity-40"
           }`}
         >
@@ -350,8 +350,8 @@ function BeforeAfterPrototypeDiagram() {
 
         {/* ── Arrow ── */}
         <div className="flex flex-col items-center gap-1 shrink-0 px-2">
-          <span className="text-[clamp(1.75rem,3vw,2.5rem)] text-accent-green/70">→</span>
-          <span className="font-code text-[0.7rem] text-accent-green/50 whitespace-nowrap">
+          <span className="text-[clamp(1.75rem,3vw,2.5rem)] text-accent-blue-light/70">→</span>
+          <span className="font-code text-[0.7rem] text-accent-blue-light/50 whitespace-nowrap">
             AI + 2 hrs
           </span>
         </div>
@@ -364,7 +364,7 @@ function BeforeAfterPrototypeDiagram() {
               <div className="flex gap-1.5">
                 <div className="h-2.5 w-2.5 rounded-full bg-accent-red/60" />
                 <div className="h-2.5 w-2.5 rounded-full bg-accent-amber/60" />
-                <div className="h-2.5 w-2.5 rounded-full bg-accent-green/60" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#4ade80]/60" />
               </div>
               <div className="ml-2 flex-1 rounded-sm bg-white/[0.06] px-2 py-0.5">
                 <span className="font-code text-[0.6rem] text-white/25">localhost:3000/dashboard</span>
@@ -376,7 +376,7 @@ function BeforeAfterPrototypeDiagram() {
               {/* Header */}
               <div className="flex items-center justify-between">
                 <span className="text-[0.85rem] font-semibold text-deck">Dashboard</span>
-                <span className="rounded-full bg-accent-green/15 px-2 py-0.5 font-code text-[0.6rem] text-accent-green">
+                <span className="rounded-full bg-accent-blue/15 px-2 py-0.5 font-code text-[0.6rem] text-accent-blue-light">
                   Healthy
                 </span>
               </div>
@@ -385,7 +385,7 @@ function BeforeAfterPrototypeDiagram() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="rounded-md bg-white/[0.04] border border-white/[0.06] p-2.5">
                   <p className="font-code text-[0.55rem] uppercase tracking-wider text-deck/30">Runway</p>
-                  <p className="text-[1.1rem] font-bold text-accent-green mt-0.5">8.2 mo</p>
+                  <p className="text-[1.1rem] font-bold text-accent-blue-light mt-0.5">8.2 mo</p>
                 </div>
                 <div className="rounded-md bg-white/[0.04] border border-white/[0.06] p-2.5">
                   <p className="font-code text-[0.55rem] uppercase tracking-wider text-deck/30">MRR</p>
@@ -426,7 +426,7 @@ function BeforeAfterPrototypeDiagram() {
           <span className="font-semibold text-deck">Product-Market Fit (PMF):</span>{" "}
           The point at which your product satisfies a real market demand — when users need
           what you&apos;ve built and are willing to pay for or consistently use it.{" "}
-          <span className="italic text-accent-green/80">
+          <span className="italic text-accent-blue-light/80">
             Everything in this workshop is in service of testing for PMF faster.
           </span>
         </p>
@@ -444,13 +444,13 @@ export function DiagramSlide({ slide }: { slide: DiagramSlideType }) {
       {/* Atmospheric background elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-radial from-accent-green/[0.035] via-transparent to-transparent blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-radial from-accent-blue/[0.035] via-transparent to-transparent blur-3xl" />
         {/* Grid pattern - very subtle */}
         <div
           className="absolute inset-0 opacity-[0.012]"
           style={{
-            backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
-                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(to right, rgba(22, 18, 211, 0.6) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(22, 18, 211, 0.6) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />

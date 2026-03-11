@@ -21,8 +21,8 @@ const libreBaskerville = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
-  title: "Rapid Prototyping with AI — Workshop",
-  description: "From Idea to Demo in Hours. A workshop by Kyle at Fractions Studio.",
+  title: "Rapid Prototyping with AI — Better Operators Workshop",
+  description: "From Idea to Demo in Hours. A workshop by Better Operators.",
 };
 
 export default function RootLayout({
